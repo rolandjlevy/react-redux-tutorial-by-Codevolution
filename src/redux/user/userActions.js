@@ -2,7 +2,7 @@ import {
   FETCH_USERS_REQUEST,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_FAILURE
-} from './actionTypes.js'
+} from './userTypes.js'
 
 export const fetchUsersRequest = () => {
   return {
