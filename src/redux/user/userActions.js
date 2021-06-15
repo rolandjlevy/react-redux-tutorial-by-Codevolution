@@ -30,9 +30,13 @@ const url = 'https://jsonplaceholder.typicode.com/users';
 
 export const fetchUsers = () => {
   return (dispatch) => {
+    dispatch(fetchUsersRequest());
     axios.get(url)
     .then(response => {
-      console.log(response.data);
+      dispatch(fetchUsersSuccess(response.data));
     })
+    .catch(err => {
+      dispatch(fetchUsersFailure(err.message));
+    });
   }
 }
