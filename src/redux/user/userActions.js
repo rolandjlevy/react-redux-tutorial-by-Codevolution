@@ -2,7 +2,9 @@ import {
   FETCH_USERS_REQUEST,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_FAILURE
-} from './userTypes.js'
+} from './userTypes.js';
+
+import axios from 'axios';
 
 export const fetchUsersRequest = () => {
   return {
@@ -21,5 +23,16 @@ export const fetchUsersFailure = (error) => {
   return {
     type: FETCH_USERS_FAILURE,
     payload: error
+  }
+}
+
+const url = 'https://jsonplaceholder.typicode.com/users';
+
+export const fetchUsers = () => {
+  return (dispatch) => {
+    axios.get(url)
+    .then(response => {
+      console.log(response.data);
+    })
   }
 }

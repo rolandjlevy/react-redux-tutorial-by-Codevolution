@@ -9,11 +9,13 @@ import HooksCakeContainer from './components/HooksCakeContainer';
 import IcecreamContainer from './components/IcecreamContainer';
 import HooksIcecreamContainer from './components/HooksIcecreamContainer';
 import HotdogContainer from './components/HotdogContainer';
+import UserContainer from './components/UserContainer';
 
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
+        <UserContainer />
         <ItemContainer cake/>
         <ItemContainer icecream/>
         <NewCakeContainer />
